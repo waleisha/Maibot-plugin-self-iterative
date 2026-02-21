@@ -1,0 +1,97 @@
+{
+  "manifest_version": 1,
+  "name": "MaiBot自我迭代框架 (Self Iterative Framework)",
+  "version": "1.0.0",
+  "description": "一个让MaiBot能够自我迭代、自我优化的框架插件。支持代码读取、修改、校验、差异对比和部署，包含完整的安全审核机制。",
+  "author": {
+    "name": "MaiBot开发者",
+    "url": "https://github.com/MaiM-with-u"
+  },
+  "license": "GPL-v3.0-or-later",
+  "host_application": {
+    "min_version": "0.8.0"
+  },
+  "homepage_url": "https://github.com/MaiM-with-u/maibot",
+  "repository_url": "https://github.com/MaiM-with-u/maibot",
+  "keywords": [
+    "self-iterative",
+    "code-modification",
+    "auto-update",
+    "framework",
+    "development"
+  ],
+  "categories": [
+    "Development",
+    "Framework"
+  ],
+  "default_locale": "zh-CN",
+  "plugin_info": {
+    "is_built_in": false,
+    "plugin_type": "framework",
+    "components": [
+      {
+        "type": "tool",
+        "name": "read_file",
+        "description": "读取指定路径的源代码文件"
+      },
+      {
+        "type": "tool",
+        "name": "write_file",
+        "description": "将代码写入影子工作区"
+      },
+      {
+        "type": "tool",
+        "name": "execute_terminal",
+        "description": "执行安全的终端命令"
+      },
+      {
+        "type": "command",
+        "name": "iterate",
+        "description": "触发自我迭代流程",
+        "pattern": "^/iterate(?P<target>\\s+.+)?$"
+      },
+      {
+        "type": "command",
+        "name": "approve",
+        "description": "审核通过并应用修改",
+        "pattern": "^/(approve|允许|确认|同意)$"
+      },
+      {
+        "type": "command",
+        "name": "reject",
+        "description": "打回修改请求",
+        "pattern": "^/(reject|拒绝|打回|不同意)$"
+      },
+      {
+        "type": "command",
+        "name": "rollback",
+        "description": "回滚到指定版本",
+        "pattern": "^/rollback(?P<timestamp>\\s+\\d+)?$"
+      },
+      {
+        "type": "command",
+        "name": "diff",
+        "description": "查看当前修改的差异",
+        "pattern": "^/diff$"
+      },
+      {
+        "type": "command",
+        "name": "status",
+        "description": "查看迭代状态",
+        "pattern": "^/status$"
+      }
+    ],
+    "features": [
+      "代码读取工具 - 安全读取白名单内的源代码",
+      "代码写入工具 - 将修改写入影子工作区",
+      "终端执行工具 - 执行安全的系统命令",
+      "AST语法校验 - 自动检查代码语法错误",
+      "差异生成器 - 生成Git风格的diff报告",
+      "人工审核机制 - 管理员确认后才应用修改",
+      "自动备份系统 - 修改前自动备份原文件",
+      "一键回滚功能 - 支持快速回滚到历史版本",
+      "迭代状态追踪 - 实时显示当前迭代进度"
+    ]
+  },
+  "id": "maibot.self_iterative_framework"
+}
