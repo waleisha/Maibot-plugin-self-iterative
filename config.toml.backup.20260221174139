@@ -1,0 +1,105 @@
+# MaiBot自我迭代框架配置文件
+# 版本: 1.0.0
+
+[plugin]
+config_version = "1.0.0"
+enabled = true
+
+# 安全设置
+[security]
+# 超级管理员QQ号列表，只有这些用户可以进行审核操作
+admin_qqs = [123456789]
+
+# 允许读取的目录白名单（绝对路径或相对于MaiBot根目录的路径）
+# 注意：修改此配置需要重启插件才能生效
+allowed_read_paths = [
+    "src/plugins",
+    "src/common",
+    "src/config",
+    "plugins",
+]
+
+# 允许修改的目录白名单（更加严格的限制）
+allowed_write_paths = [
+    "plugins",
+]
+
+# 禁止访问的文件/目录模式（正则表达式列表）
+forbidden_patterns = [
+    ".*\\.env.*",
+    ".*token.*",
+    ".*password.*",
+    ".*secret.*",
+    ".*credential.*",
+    ".*api_key.*",
+    ".*private.*",
+]
+
+# 允许执行的终端命令白名单
+allowed_commands = [
+    "pip",
+    "python",
+    "python3",
+    "ls",
+    "dir",
+    "cat",
+    "type",
+    "echo",
+    "git",
+    "pytest",
+]
+
+# 禁止执行的命令黑名单
+forbidden_commands = [
+    "rm -rf /",
+    "rm -rf /*",
+    "dd",
+    "mkfs",
+    "format",
+    "del /f /s /q",
+]
+
+# 迭代设置
+[iteration]
+# 影子工作区路径（相对于插件目录）
+shadow_workspace_path = "storage/.shadow"
+
+# 备份存储路径
+backup_path = "storage/.backups"
+
+# 最大备份数量（超过后自动清理旧备份）
+max_backups = 50
+
+# 是否启用自动语法检查
+enable_syntax_check = true
+
+# 是否启用差异报告
+enable_diff_report = true
+
+# 审核超时时间（秒）
+approval_timeout = 300
+
+# 重启前等待时间（秒）
+restart_delay = 3
+
+# LLM设置
+[llm]
+# 用于代码生成的模型名称
+model_name = "default"
+
+# 代码生成温度
+temperature = 0.3
+
+# 最大生成token数
+max_tokens = 4096
+
+# 日志设置
+[logging]
+# 日志级别: DEBUG, INFO, WARNING, ERROR
+level = "INFO"
+
+# 是否记录详细的工具调用日志
+log_tool_calls = true
+
+# 是否记录文件操作日志
+log_file_operations = true
