@@ -1,0 +1,52 @@
+{
+  "manifest_version": 1,
+  "name": "MaiBot 自我迭代插件",
+  "version": "2.1.0",
+  "description": "一个让 MaiBot 能够自我迭代、自我优化的框架插件。支持代码读取、修改、校验、差异对比和部署，包含完整的安全审核机制。支持独立LLM模型（Claude、Gemini、Kimi等）。",
+  "author": {
+    "name": "MaiBot开发者",
+    "email": "",
+    "url": "https://github.com/Mai-with-u/MaiBot"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/waleisha/Maibot-plugin-self-iterative",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waleisha/Maibot-plugin-self-iterative"
+  },
+  "bugs": {
+    "url": "https://github.com/waleisha/Maibot-plugin-self-iterative/issues"
+  },
+  "keywords": [
+    "self-iterative",
+    "code-modification",
+    "self-improvement",
+    "development-tools",
+    "claude",
+    "gemini",
+    "kimi"
+  ],
+  "categories": [
+    "development",
+    "tools"
+  ],
+  "min_bot_version": "0.1.0",
+  "max_bot_version": "",
+  "dependencies": [],
+  "python_dependencies": [
+    "aiohttp"
+  ],
+  "permissions": [
+    "read_files",
+    "write_files",
+    "execute_commands"
+  ],
+  "features": {
+    "tools": true,
+    "commands": true,
+    "actions": false,
+    "event_handlers": true,
+    "web_ui": false
+  },
+  "id": "MaiBot开发者.maibot_plugin_self_iterative"
+}
